@@ -107,7 +107,7 @@ def generate_response(system_prompt,user_message):
 
 
 
-pdf_path = "data/AI_Information.pdf"
+pdf_path = "../data/AI_Information.pdf"
 extracted_text = extract_text_from_pdf(pdf_path)
 #重复的文本块在每段文本块的10%~20%之间
 chunks = chunk_text(extracted_text, chunk_size=1000, overlap=200)
@@ -119,7 +119,7 @@ chunks = chunk_text(extracted_text, chunk_size=1000, overlap=200)
 
 embeddings = create_embeddings(chunks)
 
-with open("data/val.json") as f:
+with open("../data/val.json") as f:
     data = json.load(f)
 
 query = data[0]['question']
